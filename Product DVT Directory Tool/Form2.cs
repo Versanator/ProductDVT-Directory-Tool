@@ -12,12 +12,78 @@ namespace Product_DVT_Directory_Tool
 {
     public partial class Form2 : Form
     {
+
+        public static string Level = "";
+        public static string Path = "";
+        public static int Index;
         public Form2()
         {
             InitializeComponent();
+
+            Level = Form1.Level;
+            Path = Form1.Path;
+            Index = Form1.Index;
+            string[] names = PathParse(); 
+
+            //debug_label.Text = Index.ToString();
+
+
+            if (Index == 1)
+            {
+                board_textBox.Enabled = false;
+                board_textBox.Text = names[0];
+            }
+            else if (Index == 2)
+            {
+                board_textBox.Enabled = false;
+                revision_textBox.Enabled = false;
+                board_textBox.Text = names[0];
+                revision_textBox.Text = names[1];
+            }
+            else
+            {
+
+            }
+
+        }
+
+ 
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            System.Diagnostics.Process.Start(Path);
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        public string[] PathParse()
+        {
+            string[] names = { "one", "two", "two", "two" };
+            string path = Path.Substring(34);
+            debug_label.Text = path;
+            // names[0] = "null";
+            // names[1] = "null";
+
+
+
+
+            return names;
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
