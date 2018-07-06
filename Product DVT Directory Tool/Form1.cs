@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
 
 namespace Product_DVT_Directory_Tool
@@ -13,12 +13,12 @@ namespace Product_DVT_Directory_Tool
     public partial class Form1 : Form
     {
         public static string Level = "";
-        public static string Path = "";
+        public static string Path = @"\\hun-fs-sc\Engineering\ProductDVT";
         public static int Index = -999;
         public Form1()
         {
             InitializeComponent();
-            folderBrowserDialog1.SelectedPath = @"\\hun-fs-sc\Engineering\ProductDVT";
+            folderBrowserDialog1.SelectedPath =Path;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,7 +41,9 @@ namespace Product_DVT_Directory_Tool
             }
             else
             {
-
+                SystemSounds.Exclamation.Play();
+                SystemSounds.Exclamation.Play();
+                new Form3().ShowDialog();
             }
         }
 
