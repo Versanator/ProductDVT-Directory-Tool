@@ -1,29 +1,30 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Product_DVT_Directory_Tool
 {
     public partial class Form2 : Form
     {
-
-        public static string Level = "";
         public static string Path = "";
         public static int Index;
         FileStream fs;
         public Form2()
         {
             InitializeComponent();
-
-            Level = Form1.Level;
+            /*
+             Getting the Selected file path and usser selected directory level from Form1
+             */
             Path = Form1.Path;
             Index = Form1.Index;
             string[] names;
 
             //debug_label.Text = Index.ToString();
 
-
+            /*
+                Choosing if parsing is necessary
+                See line 135 for parseing algorithm
+            */
             if (Index == 1)
             {
                 names = PathParse();
@@ -55,6 +56,9 @@ namespace Product_DVT_Directory_Tool
 
         private void button1_Click(object sender, EventArgs e)
         {
+            /*
+             Setting up default subdirectories for creation
+             */
             Path = Form1.Path;
             string[] defaultDirs = new string[12];
             defaultDirs[0] = @"\Air Flow\Tests\ExampleTEST_1\Results";
@@ -73,10 +77,13 @@ namespace Product_DVT_Directory_Tool
             if (board_textBox.Text == "")
                 board_textBox.Text = "New_Board";
             if (revision_textBox.Text == "")
-                revision_textBox.Text = "Revision_1";
+                revision_textBox.Text = "B1";
             if (swconfig_textBox.Text == "")
                 swconfig_textBox.Text = "PCXXXX";
 
+            /*
+             Creating dir based on user choice
+             */
             switch (Index)
             {
                 case 0:
@@ -100,6 +107,9 @@ namespace Product_DVT_Directory_Tool
                 default:
                     break;
             }
+            /*
+             Creating all Default subdir and Test Description.txt file
+             */
             foreach (string s in defaultDirs)
             {
                 Directory.CreateDirectory(Path + s);
@@ -107,6 +117,7 @@ namespace Product_DVT_Directory_Tool
             fs = File.Create(Path + defaultDirs[0] + @"\Test Description.txt");
             fs = File.Create(Path + defaultDirs[4] + @"\Test Description.txt");
             fs = File.Create(Path + defaultDirs[8] + @"\Test Description.txt");
+            fs.Close();
             System.Diagnostics.Process.Start(Path);
         }
 
@@ -117,7 +128,9 @@ namespace Product_DVT_Directory_Tool
 
 
 
-
+        /*
+             Parsing board name and/or revision name out of the selected path.
+        */
         public string[] PathParse()
         {
             string[] names = new string[2];

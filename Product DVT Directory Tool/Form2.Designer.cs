@@ -74,7 +74,7 @@
             this.revision_textBox.Name = "revision_textBox";
             this.revision_textBox.Size = new System.Drawing.Size(177, 20);
             this.revision_textBox.TabIndex = 9;
-            this.revision_textBox.Text = "Revision_1";
+            this.revision_textBox.Text = "B1";
             // 
             // label2
             // 

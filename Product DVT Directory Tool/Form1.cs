@@ -12,7 +12,6 @@ namespace Product_DVT_Directory_Tool
 {
     public partial class Form1 : Form
     {
-        public static string Level = "";
         public static string Path = @"\\hun-fs-sc\Engineering\ProductDVT";
         public static int Index = -999;
         public Form1()
@@ -36,7 +35,7 @@ namespace Product_DVT_Directory_Tool
                 Path = folderBrowserDialog1.SelectedPath;
             }
 
-            if (comboBoxLevel.SelectedIndex == 0 || folderBrowserDialog1.SelectedPath.Length > 34)
+            if (comboBoxLevel.SelectedIndex == 0 && Path.Contains("\\") || folderBrowserDialog1.SelectedPath.Length > 34 && Path.Contains("\\"))
             {
                 new Form2().ShowDialog();
             }
@@ -51,7 +50,6 @@ namespace Product_DVT_Directory_Tool
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Level = comboBoxLevel.Text;
             Index = comboBoxLevel.SelectedIndex;
             Path = @"\\hun-fs-sc\Engineering\ProductDVT";
         }
