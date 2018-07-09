@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Product_DVT_Directory_Tool
@@ -10,6 +11,7 @@ namespace Product_DVT_Directory_Tool
         public static string Level = "";
         public static string Path = "";
         public static int Index;
+        FileStream fs;
         public Form2()
         {
             InitializeComponent();
@@ -102,6 +104,9 @@ namespace Product_DVT_Directory_Tool
             {
                 Directory.CreateDirectory(Path + s);
             }
+            fs = File.Create(Path + defaultDirs[0] + @"\Test Description.txt");
+            fs = File.Create(Path + defaultDirs[4] + @"\Test Description.txt");
+            fs = File.Create(Path + defaultDirs[8] + @"\Test Description.txt");
             System.Diagnostics.Process.Start(Path);
         }
 
