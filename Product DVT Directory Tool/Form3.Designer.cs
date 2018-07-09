@@ -46,6 +46,8 @@
             // 
             this.ClientSize = new System.Drawing.Size(305, 148);
             this.Controls.Add(this.richTextBox2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form3_Load);

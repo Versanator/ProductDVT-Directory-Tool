@@ -35,7 +35,8 @@ namespace Product_DVT_Directory_Tool
                 folderBrowserDialog1.ShowDialog();
                 Path = folderBrowserDialog1.SelectedPath;
             }
-            if (comboBoxLevel.SelectedIndex == 0 || Path.Length > 34)
+
+            if (comboBoxLevel.SelectedIndex == 0 || folderBrowserDialog1.SelectedPath.Length > 34)
             {
                 new Form2().ShowDialog();
             }
@@ -52,6 +53,7 @@ namespace Product_DVT_Directory_Tool
         {
             Level = comboBoxLevel.Text;
             Index = comboBoxLevel.SelectedIndex;
+            Path = @"\\hun-fs-sc\Engineering\ProductDVT";
         }
 
         private void label1_Click(object sender, EventArgs e)

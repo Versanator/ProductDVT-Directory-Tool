@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Product_DVT_Directory_Tool
@@ -23,18 +17,20 @@ namespace Product_DVT_Directory_Tool
             Level = Form1.Level;
             Path = Form1.Path;
             Index = Form1.Index;
-            string[] names = PathParse();
+            string[] names;
 
             //debug_label.Text = Index.ToString();
 
 
             if (Index == 1)
             {
+                names = PathParse();
                 board_textBox.Enabled = false;
                 board_textBox.Text = names[0];
             }
             else if (Index == 2)
             {
+                names = PathParse();
                 board_textBox.Enabled = false;
                 revision_textBox.Enabled = false;
                 
@@ -57,8 +53,55 @@ namespace Product_DVT_Directory_Tool
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Path = Form1.Path;
+            string[] defaultDirs = new string[12];
+            defaultDirs[0] = @"\Air Flow\Tests\ExampleTEST_1\Results";
+            defaultDirs[1] = @"\Air Flow\Diagnostics";
+            defaultDirs[2] = @"\Air Flow\Firmware";
+            defaultDirs[3] = @"\Air Flow\LabView";
+            defaultDirs[4] = @"\Temperature Chamber\Tests\ExampleTEST_1\Results";
+            defaultDirs[5] = @"\Temperature Chamber\Diagnostics";
+            defaultDirs[6] = @"\Temperature Chamber\Firmware";
+            defaultDirs[7] = @"\Temperature Chamber\LabView";
+            defaultDirs[8] = @"\Open Air Chassis\Tests\ExampleTEST_1\Results";
+            defaultDirs[9] = @"\Open Air Chassis\Diagnostics";
+            defaultDirs[10] = @"\Open Air Chassis\Firmware";
+            defaultDirs[11] = @"\Open Air Chassis\LabView";
 
+            if (board_textBox.Text == "")
+                board_textBox.Text = "New_Board";
+            if (revision_textBox.Text == "")
+                revision_textBox.Text = "Revision_1";
+            if (swconfig_textBox.Text == "")
+                swconfig_textBox.Text = "PCXXXX";
 
+            switch (Index)
+            {
+                case 0:
+                    {
+                        Directory.CreateDirectory(Path + @"\" + board_textBox.Text + @"\" + revision_textBox.Text + @"\" + swconfig_textBox.Text);
+                        Path = Path + @"\" + board_textBox.Text + @"\" + revision_textBox.Text + @"\" + swconfig_textBox.Text;
+                        break;
+                    }
+                case 1:
+                    {
+                        Directory.CreateDirectory(Path + @"\" + revision_textBox.Text + @"\" + swconfig_textBox.Text);
+                        Path = Path + @"\" + revision_textBox.Text + @"\" + swconfig_textBox.Text;
+                        break;
+                    }
+                case 2:
+                    {
+                        Directory.CreateDirectory(Path + @"\" + swconfig_textBox.Text);
+                        Path = Path + @"\" + swconfig_textBox.Text;
+                        break;
+                    }
+                default:
+                    break;
+            }
+            foreach (string s in defaultDirs)
+            {
+                Directory.CreateDirectory(Path + s);
+            }
             System.Diagnostics.Process.Start(Path);
         }
 
@@ -78,10 +121,12 @@ namespace Product_DVT_Directory_Tool
             {
                 names = path.Split('\\');
             }
-            else
+            else if(Index == 1)
             {
                 names[0] = path;
             }
+            
+            
             return names;
         }
     }

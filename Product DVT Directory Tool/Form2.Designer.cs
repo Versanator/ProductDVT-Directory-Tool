@@ -37,7 +37,6 @@
             this.swconfig_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.debug_Label = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,8 +53,10 @@
             // 
             this.board_textBox.Location = new System.Drawing.Point(108, 33);
             this.board_textBox.Name = "board_textBox";
+            this.board_textBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.board_textBox.Size = new System.Drawing.Size(177, 20);
             this.board_textBox.TabIndex = 1;
+            this.board_textBox.Text = "New_Board";
             // 
             // button1
             // 
@@ -73,6 +74,7 @@
             this.revision_textBox.Name = "revision_textBox";
             this.revision_textBox.Size = new System.Drawing.Size(177, 20);
             this.revision_textBox.TabIndex = 9;
+            this.revision_textBox.Text = "Revision_1";
             // 
             // label2
             // 
@@ -89,6 +91,7 @@
             this.swconfig_textBox.Name = "swconfig_textBox";
             this.swconfig_textBox.Size = new System.Drawing.Size(177, 20);
             this.swconfig_textBox.TabIndex = 11;
+            this.swconfig_textBox.Text = "PCXXXX";
             // 
             // label3
             // 
@@ -107,20 +110,11 @@
             this.debug_Label.Size = new System.Drawing.Size(0, 13);
             this.debug_Label.TabIndex = 12;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(127, 224);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(385, 173);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 438);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(296, 172);
             this.Controls.Add(this.debug_Label);
             this.Controls.Add(this.swconfig_textBox);
             this.Controls.Add(this.label3);
@@ -130,6 +124,8 @@
             this.Controls.Add(this.board_textBox);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Product DVT Directory Tool";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -148,6 +144,5 @@
         private System.Windows.Forms.TextBox swconfig_textBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label debug_Label;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
