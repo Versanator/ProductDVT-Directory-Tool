@@ -143,8 +143,6 @@ namespace Product_DVT_Directory_Tool
             {
                 names[0] = path;
             }
-            
-            
             return names;
         }
     }

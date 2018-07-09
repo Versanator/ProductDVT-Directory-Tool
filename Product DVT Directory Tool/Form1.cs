@@ -35,7 +35,7 @@ namespace Product_DVT_Directory_Tool
                 Path = folderBrowserDialog1.SelectedPath;
             }
 
-            if (comboBoxLevel.SelectedIndex == 0 && Path.Contains("\\") || folderBrowserDialog1.SelectedPath.Length > 34 && Path.Contains("\\"))
+            if (comboBoxLevel.SelectedIndex == 0 || folderBrowserDialog1.SelectedPath.Length > 34 && Path.Substring(35).Contains(@"\") || comboBoxLevel.SelectedIndex == 1)
             {
                 new Form2().ShowDialog();
             }
