@@ -22,7 +22,7 @@ namespace Product_DVT_Directory_Tool
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { 
             if(comboBoxLevel.SelectedIndex == 1)
             {
                 folderBrowserDialog1.Description = "Select the parent board/system.";
