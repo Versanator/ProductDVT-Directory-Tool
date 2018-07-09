@@ -8,7 +8,7 @@ namespace Product_DVT_Directory_Tool
     {
         public static string Path = "";
         public static int Index;
-        FileStream fs;
+        StreamWriter fs;
         public Form2()
         {
             InitializeComponent();
@@ -114,10 +114,9 @@ namespace Product_DVT_Directory_Tool
             {
                 Directory.CreateDirectory(Path + s);
             }
-            fs = File.Create(Path + defaultDirs[0] + @"\Test Description.txt");
-            fs = File.Create(Path + defaultDirs[4] + @"\Test Description.txt");
-            fs = File.Create(Path + defaultDirs[8] + @"\Test Description.txt");
-            fs.Close();
+            fs = File.CreateText(Path + defaultDirs[0] + @"\Test Description.txt");
+            fs = File.CreateText(Path + defaultDirs[4] + @"\Test Description.txt");
+            fs = File.CreateText(Path + defaultDirs[8] + @"\Test Description.txt");
             System.Diagnostics.Process.Start(Path);
         }
 

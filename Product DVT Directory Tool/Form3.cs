@@ -12,11 +12,13 @@ namespace Product_DVT_Directory_Tool
 {
     public partial class Form3 : Form
     {
-
+        public static string Error = Form1.Error;
         public Form3()
         {
+            Error = Form1.Error;
             InitializeComponent();
-            
+            error_richTextBox.Text = "                     !!!ERROR!!!";
+            error_richTextBox.AppendText(Error);
 
 
         }

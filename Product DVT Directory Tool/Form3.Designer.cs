@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.error_richTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // richTextBox2
+            // error_richTextBox
             // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.richTextBox2.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(281, 124);
-            this.richTextBox2.TabIndex = 0;
-            this.richTextBox2.Text = "\t\t!!ERROR!!\n\nPlease Choose a Directory";
-            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
+            this.error_richTextBox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.error_richTextBox.Location = new System.Drawing.Point(12, 12);
+            this.error_richTextBox.Name = "error_richTextBox";
+            this.error_richTextBox.ReadOnly = true;
+            this.error_richTextBox.Size = new System.Drawing.Size(568, 124);
+            this.error_richTextBox.TabIndex = 0;
+            this.error_richTextBox.Text = "\t\t\t   \t\t     !!ERROR!!\n ";
+            this.error_richTextBox.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // Form3
             // 
-            this.ClientSize = new System.Drawing.Size(305, 148);
-            this.Controls.Add(this.richTextBox2);
+            this.ClientSize = new System.Drawing.Size(592, 148);
+            this.Controls.Add(this.error_richTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -68,6 +68,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label debug_label;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox error_richTextBox;
     }
 }

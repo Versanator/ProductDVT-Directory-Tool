@@ -14,6 +14,7 @@ namespace Product_DVT_Directory_Tool
     {
         public static string Path = @"\\hun-fs-sc\Engineering\ProductDVT";
         public static int Index = -999;
+        public static string Error = "";
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +42,15 @@ namespace Product_DVT_Directory_Tool
             }
             else
             {
+                if (comboBoxLevel.SelectedIndex == -999)
+                    Error = "\n\n\tPlease select what level of the ProductDVT hierarchy you would like to create.";
+                else if (folderBrowserDialog1.SelectedPath.Length <= 34)
+                    Error = "\n\n\t Please select a subdirectory of ProductDVT\n\t\tTHIS TOOL IS ONLY APPLICABLE TO ProductDVT!!";
+                else if (!Path.Substring(35).Contains(@"\") && comboBoxLevel.SelectedIndex == 2)
+                    Error = "\n\nYou have chosen to create a new software configuration for a product." +
+                        "\nThis requires the board/system in question to have a valid revision." +
+                        "\n\tYou have selected a file path that doesn't include a board/system revision. Please select one." +
+                        "\n\nEg:\\DCM6111\\B3";
                 SystemSounds.Exclamation.Play();
                 SystemSounds.Exclamation.Play();
                 new Form3().ShowDialog();
