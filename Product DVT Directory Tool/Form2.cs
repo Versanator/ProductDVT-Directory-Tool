@@ -23,7 +23,7 @@ namespace Product_DVT_Directory_Tool
             Level = Form1.Level;
             Path = Form1.Path;
             Index = Form1.Index;
-            string[] names = PathParse(); 
+            string[] names = PathParse();
 
             //debug_label.Text = Index.ToString();
 
@@ -37,6 +37,7 @@ namespace Product_DVT_Directory_Tool
             {
                 board_textBox.Enabled = false;
                 revision_textBox.Enabled = false;
+                
                 board_textBox.Text = names[0];
                 revision_textBox.Text = names[1];
             }
@@ -47,7 +48,7 @@ namespace Product_DVT_Directory_Tool
 
         }
 
- 
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -71,21 +72,17 @@ namespace Product_DVT_Directory_Tool
 
         public string[] PathParse()
         {
-            string[] names = { "one", "two", "two", "two" };
-            string path = Path.Substring(34);
-            debug_label.Text = path;
-            // names[0] = "null";
-            // names[1] = "null";
-
-
-
-
+            string[] names = new string[2];
+            string path = Path.Substring(35);
+            if(Index == 2)
+            {
+                names = path.Split('\\');
+            }
+            else
+            {
+                names[0] = path;
+            }
             return names;
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

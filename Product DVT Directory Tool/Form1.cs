@@ -31,7 +31,7 @@ namespace Product_DVT_Directory_Tool
             }
             else if(comboBoxLevel.SelectedIndex == 2)
             {
-                folderBrowserDialog1.Description = "Select parent board/system and revision";
+                folderBrowserDialog1.Description = "Select parent board/system and revision number\nfor the new Software Configuration.";
                 folderBrowserDialog1.ShowDialog();
                 Path = folderBrowserDialog1.SelectedPath;
             }
@@ -44,6 +44,7 @@ namespace Product_DVT_Directory_Tool
                 SystemSounds.Exclamation.Play();
                 SystemSounds.Exclamation.Play();
                 new Form3().ShowDialog();
+                
             }
         }
 

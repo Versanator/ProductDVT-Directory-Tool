@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.swconfig_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.debug_label = new System.Windows.Forms.Label();
+            this.debug_Label = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -99,31 +99,29 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "SW Configuration";
             // 
-            // debug_label
+            // debug_Label
             // 
-            this.debug_label.AutoSize = true;
-            this.debug_label.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.debug_label.Location = new System.Drawing.Point(15, 145);
-            this.debug_label.Name = "debug_label";
-            this.debug_label.Size = new System.Drawing.Size(0, 13);
-            this.debug_label.TabIndex = 12;
+            this.debug_Label.AutoSize = true;
+            this.debug_Label.Location = new System.Drawing.Point(12, 118);
+            this.debug_Label.Name = "debug_Label";
+            this.debug_Label.Size = new System.Drawing.Size(0, 13);
+            this.debug_Label.TabIndex = 12;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(34, 169);
+            this.richTextBox1.Location = new System.Drawing.Point(127, 224);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(721, 291);
+            this.richTextBox1.Size = new System.Drawing.Size(385, 173);
             this.richTextBox1.TabIndex = 13;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 544);
+            this.ClientSize = new System.Drawing.Size(695, 438);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.debug_label);
+            this.Controls.Add(this.debug_Label);
             this.Controls.Add(this.swconfig_textBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.revision_textBox);
@@ -149,7 +147,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox swconfig_textBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label debug_label;
+        private System.Windows.Forms.Label debug_Label;
         private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
