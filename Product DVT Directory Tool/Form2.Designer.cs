@@ -128,6 +128,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Product DVT Directory Tool";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);

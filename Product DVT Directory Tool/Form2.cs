@@ -118,6 +118,7 @@ namespace Product_DVT_Directory_Tool
             fs = File.CreateText(Path + defaultDirs[4] + @"\Test Description.txt");
             fs = File.CreateText(Path + defaultDirs[8] + @"\Test Description.txt");
             System.Diagnostics.Process.Start(Path);
+            this.Close();
         }
 
         private void Form2_Load(object sender, EventArgs e)

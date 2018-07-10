@@ -73,5 +73,15 @@ namespace Product_DVT_Directory_Tool
         {
 
         }
+
+        private void productDVTHierarchyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"\\hun-fs-sc\Engineering\ProductDVT\ProductDVT Folder Hierarchy Template and Usage Guide.pdf");
+        }
+
+        private void productDVTFileListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"\\hun-fs-sc\Engineering\ProductDVT\ProductDVT File Hierarchy.xlsx");
+        }
     }
 }
